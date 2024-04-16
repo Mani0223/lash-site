@@ -30,36 +30,40 @@
 <meta name="theme-color" content="#ffffff">
   <!-- Custom CSS -->
   <style>
+    .navbar,
+    footer {
+      background-color: black; /* Change navbar and footer background to black */
+    }
+    .navbar-brand {
+      margin-right: 15px; /* Adjust margin for logo */
+    }
     .navbar-nav {
       margin: 0 auto; /* Center align nav items */
     }
     .navbar-nav .nav-item {
       margin: 0 25px; /* Add margin between nav items */
     }
-
     .jumbotron-text {
       font-family: "Lucida Handwriting", cursive;
     }
-
     .bg-purple {
       background-color: #D6BAE2; /* Bootstrap's $purple-200 */
     }
-
     .price-list {
       border: 2px solid #D6BAE2; /* Change border color */
       padding-bottom: 10px; /* Optional: Add padding to the border */
     }
-
+    .price-list p:nth-last-child(-n+3) {
+      font-size: 0.8em; /* Decrease font size of last three lines */
+    }
     .custom-margin {
       margin-top: 100px; /* Custom margin for button */
     }
-
     /* Make carousel images smaller */
     .carousel-item img {
       max-width: 100%; /* Ensure images stay within carousel boundaries */
       height: auto; /* Maintain aspect ratio */
     }
-
     /* Remove background color and border from carousel indicator buttons */
     .carousel-control-prev,
     .carousel-control-next {
@@ -68,27 +72,28 @@
       outline: none; /* Remove outline */
       box-shadow: none; /* Remove box shadow */
     }
-
     /* Change color of carousel control icons */
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
       color: #000; /* Change color to desired color */
     }
-    
+
+    @media (max-width: 768px) {
+    .jumbotron {
+      background-position: center;
+    }
+  }
   </style>
 </head>
 <body>
 
-
- 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"></a>
-
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <a class="navbar-brand" href="index.html"><img src="lashbully logo.png" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
@@ -97,9 +102,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#gallery">Gallery</a>
           </li>
-        </ul>
-        <a class="navbar-brand mx-auto" href="#"><img src="lashbully logo.png" /></a>
-        <ul class="navbar-nav ms-auto"> <!-- Changed `mr-auto` to `ms-auto` for margin -->
           <li class="nav-item">
             <a class="nav-link" href="#about">About Me</a>
           </li>
@@ -110,7 +112,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Headline Image with Text -->
   <div class="jumbotron jumbotron-fluid d-flex align-items-center" style="background-image: url('eye.jpeg'); height: 100vh; background-size: cover;">
     <div class="container text-center">
@@ -131,10 +133,10 @@
           <p class="text-center">Volume......$45</p>
           <p class="text-center">Full Wispy Volume......$45</p>
           <p class="text-center">Full Dramatic Volume......$45</p><br>
-          <p>**$25-$40 non-refudable deposit. (Deposit varies by lash type)</p>
+          <p>**$25-$40 non-refundable deposit. (Deposit varies by lash type)</p>
           <p>**NO CALL NO SHOW NOT TOLERATED!</p>
           <p>**Photos may be taken for social media purposes only</p>
-        </div> 
+        </div>
       </div>
     </div>
   </section>
@@ -150,26 +152,26 @@
         <div class="carousel-item active">
           <div class="row">
             <div class="col-4">
-              <img src="photo2.jpeg" class="img-fluid mx-auto d-bloc rounded" alt="...">
+              <img src="photo2.jpeg" class="img-fluid mx-auto d-bloc rounded border border-dark" alt="...">
             </div>
             <div class="col-4">
-              <img src="photo1.jpeg" class="img-fluid mx-auto d-block rounded" alt="...">
+              <img src="photo1.jpeg" class="img-fluid mx-auto d-block rounded border border-dark" alt="...">
             </div>
             <div class="col-4">
-              <img src="photo3.jpeg" class="img-fluid mx-auto d-block rounded" alt="...">
+              <img src="photo3.jpeg" class="img-fluid mx-auto d-block rounded border border-dark" alt="...">
             </div>
           </div>
         </div>
         <div class="carousel-item">
           <div class="row">
             <div class="col-4">
-              <img src="photo4.jpeg" class="img-fluid mx-auto d-block rounded" alt="...">
+              <img src="photo4.jpeg" class="img-fluid mx-auto d-block rounded border border-dark" alt="...">
             </div>
             <div class="col-4">
-              <img src="photo5.jpeg" class="img-fluid mx-auto d-block rounded" alt="...">
+              <img src="photo5.jpeg" class="img-fluid mx-auto d-block rounded border border-dark" alt="...">
             </div>
             <div class="col-4">
-              <img src="photo.jpeg" class="img-fluid mx-auto d-block rounded" alt="...">
+              <img src="photo.jpeg" class="img-fluid mx-auto d-block rounded border border-dark" alt="...">
             </div>
           </div>
         </div>
@@ -185,7 +187,6 @@
     </div>
   </div>
 </section>
-
 
   <!-- About Me Section -->
   <section id="about" class="py-5 bg-light">
@@ -219,8 +220,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>2024 Lashbully</p>
+  <footer class="text-white text-center py-3">
+    <div class="container">
+      <p>2024 Lashbully</p>
+    </div>
   </footer>
 
   <!-- Bootstrap JS (Make sure to include the Bootstrap 5 JavaScript) -->
